@@ -1,4 +1,4 @@
-# 0xVeen — Mini Recon Framework
+# 0xVeen — Recon Framework
 
 ## Overview
 
