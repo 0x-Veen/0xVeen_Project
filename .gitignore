@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+output/
+tools/LinkFinder/venv/
+tools/SecretFinder/venv/
+

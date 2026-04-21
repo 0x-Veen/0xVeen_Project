@@ -1,0 +1,1 @@
+/home/kali/Downloads/Bug-Hunter/wordlists/SecLists/Discovery/Web-Content/common.txt
