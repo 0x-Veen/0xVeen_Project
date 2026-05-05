@@ -29,7 +29,7 @@ go install github.com/projectdiscovery/katana/cmd/katana@latest
 go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 
 echo "[*] Installing Amass..."
-# جرّب من apt أولًا، ولو عندك طريقة تانية ثابتة في بيئتك استخدمها
+
 if command -v amass >/dev/null 2>&1; then
   echo "[+] amass already installed"
 else
@@ -40,7 +40,7 @@ echo "[*] Installing Findomain binary..."
 TMP_DIR="$(mktemp -d)"
 cd "$TMP_DIR"
 
-# هات آخر إصدار لينكس x86_64 لو جهازك المعتاد كده
+
 wget -O findomain-linux.zip https://github.com/Findomain/Findomain/releases/latest/download/findomain-linux.zip
 unzip findomain-linux.zip
 chmod +x findomain
