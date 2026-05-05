@@ -3,8 +3,6 @@ import os
 import argparse
 from core.utils.banner import print_banner
 from core.utils.logger import print_info, print_success, print_error
-
-# import modules
 from core import subdomain_enum, httpx_check, ffuf_discover, crawler, js_analyzer, secrets_finder
 
 def create_output_dir(domain, base_dir="output"):

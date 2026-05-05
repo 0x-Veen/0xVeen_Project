@@ -15,9 +15,9 @@ def run_cmd(cmd):
 
 def clean_subdomain(line, domain):
     line = line.strip().lower()
-    line = re.sub(r'^https?://', '', line)  # remove protocol
-    line = line.split('/')[0]                # remove path
-    line = line.split(':')[0]                # remove port
+    line = re.sub(r'^https?://', '', line)  
+    line = line.split('/')[0]
+    line = line.split(':')[0]
     if line.startswith('*.'):
         line = line[2:]
     if line.endswith('.'):
@@ -31,7 +31,6 @@ def run(domain, output_dir):
     os.makedirs(output_dir, exist_ok=True)
     results = set()
 
-    # Run each tool if installed
     if tool_exists("subfinder"):
         print("[+] Running subfinder...")
         out = run_cmd(f"subfinder -d {domain} -silent")
@@ -64,7 +63,6 @@ def run(domain, output_dir):
             if sub:
                 results.add(sub)
 
-    # crt.sh (if curl + jq available)
     if tool_exists("curl") and tool_exists("jq"):
         print("[+] Fetching crt.sh subdomains...")
         out = run_cmd(f'curl -s https://crt.sh/?q=%25.{domain}&output=json | jq -r ".[].name_value"')
@@ -74,7 +72,6 @@ def run(domain, output_dir):
                 if sub:
                     results.add(sub)
 
-    # Write final sorted results
     sub_file = os.path.join(output_dir, "subdomains.txt")
     if results:
         with open(sub_file, "w") as f:

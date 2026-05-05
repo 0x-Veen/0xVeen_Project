@@ -14,7 +14,6 @@ def run(output_dir):
     ]
 
 
-    # Clean, well-formed regex patterns dictionary
     regex_patterns = {
         "AWS Access Key": r"AKIA[0-9A-Z]{16}",
         "AWS Secret Key": r"(?i)aws(.{0,20})?(secret|key)['\"=:\s]{1,5}[0-9a-zA-Z/+=]{40}",
@@ -41,7 +40,7 @@ def run(output_dir):
         for label, pattern in regex_patterns.items():
             matches = re.findall(pattern, content)
             for match in matches:
-                # if regex has groups, match may be a tuple; normalize it
+
                 if isinstance(match, tuple):
                     match_str = "".join([m for m in match if m])
                 else:

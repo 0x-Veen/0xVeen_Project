@@ -7,8 +7,8 @@ from core.utils.logger import print_info, print_success, print_warn, print_error
 def run(js_files_list, output_dir):
     print_info("🧠 Starting JavaScript Analysis...")
 
-    secretfinder_path = "tools/SecretFinder/SecretFinder.py"  # adjust per your environment
-    linkfinder_path = "tools/LinkFinder/linkfinder.py"      # adjust per your environment
+    secretfinder_path = "tools/SecretFinder/SecretFinder.py"  
+    linkfinder_path = "tools/LinkFinder/linkfinder.py"      
 
     if not os.path.isfile(js_files_list):
         print_warn(f"⚠️ JS files list not found: {js_files_list}")

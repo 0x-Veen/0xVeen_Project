@@ -15,7 +15,7 @@ def run(output_dir):
     js_links_file = os.path.join(katana_dir, "js_files.txt")
     sensitive_files_file = os.path.join(katana_dir, "sensitive_files.txt")
 
-    # تعريف المجموعات قبل أي شيء
+ 
     all_urls = set()
     js_links = set()
     sensitive_links = set()
@@ -64,7 +64,6 @@ def run(output_dir):
         except Exception as e:
             print_error(f"❌ Error running Katana on {domain}: {str(e)}")
 
-    # Write results if any
     def save(path, data, label):
         if data:
             with open(path, "w") as f:
